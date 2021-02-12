@@ -1,20 +1,8 @@
-module.exports = {
-	config: {
-		name: '',
-		aliases: [],
-	},
-	callback: async () => {
-		// Insert Code here
-	},
-};
-
-// or
-
-module.exports.callback = async () => {
-	// Insert code here
+module.exports.callback = async ({ message }) => {
+	message.channel.send('Hello');
 };
 
 module.exports.config = {
-	name: '',
+	name: 'test',
 	aliases: [],
 };
