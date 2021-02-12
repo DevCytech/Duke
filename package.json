@@ -1,0 +1,32 @@
+{
+	"name": "duke",
+	"version": "2.0.0",
+	"description": "Duke is a multi-purpose discord bot. Version 2.0 is the remastered version of Duke by Creepa, remastered by DevCytech",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DevCytech/Duke.git"
+	},
+	"keywords": [
+		"discord-bot"
+	],
+	"author": "DevCytech, & Creepa",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/DevCytech/Duke/issues"
+	},
+	"homepage": "https://github.com/DevCytech/Duke#readme",
+	"devDependencies": {
+		"eslint": "^7.19.0"
+	},
+	"dependencies": {
+		"discord.js": "^12.5.1",
+		"dotenv": "^8.2.0",
+		"mongoose": "^5.11.15",
+		"superagent": "^6.1.0"
+	}
+}
