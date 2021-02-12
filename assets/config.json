@@ -1,9 +1,9 @@
 {
-  "prefix": "!",
-  
-  "creator": [],
-  "developers": [ "190612497848336384" ],
-  
-  "website": "https://duke-bot.com/",
-  "supportCode": "",
+	"prefix": "!",
+
+	"creator": [],
+	"developers": ["190612497848336384"],
+
+	"website": "https://duke-bot.com/",
+	"supportCode": ""
 }
