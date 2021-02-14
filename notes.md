@@ -39,3 +39,17 @@ There were a lot of changes, below is the list of all the changes. Have fun read
 -   Mentioning the bot now gives a response
 -   Copied over player files
 -   Now loading music events and setup clients music
+
+## Day 4
+
+-   Started remaking logs finished the following events below
+    -   roleCreate
+    -   roleDelete
+    -   emojiCreate
+    -   emojiDelete
+    -   channelCreate
+    -   channelDelete
+    -   inviteCreated
+    -   inviteDelete
+    -   messageDelete
+-   Created `toTitleCase` function
