@@ -9,6 +9,7 @@ module.exports.fetchFiles = require('./utils/files').fetchFiles;
 module.exports.fetchMember = require('./utils/members').fetchMember;
 
 // Message Management
+module.exports.translate = require('../assets/translations.json');
 module.exports.promptMessage = require('./utils/messages').promptMessage;
 
 // Date Management
