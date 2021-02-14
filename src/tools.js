@@ -8,6 +8,9 @@ module.exports.fetchFiles = require('./utils/files').fetchFiles;
 // Member Management
 module.exports.fetchMember = require('./utils/members').fetchMember;
 
+// Test Management
+module.exports.toTitleCase = require('./utils/text').toTitleCase;
+
 // Message Management
 module.exports.translate = require('../assets/translations.json');
 module.exports.promptMessage = require('./utils/messages').promptMessage;
