@@ -1,1 +1,5 @@
-{}
+{
+	"success": "#00FF00",
+	"error": "#FF0000",
+	"alert": "FFA500"
+}
