@@ -14,12 +14,12 @@ const guildSchema = new Schema({
 	// Settings
 	prefix: { type: String, default: config.prefix },
 	// Logging
-	logChannel: String.fromCharCode,
+	logChannel: String,
 	reportChannel: String,
 	// Moderation
 	mutedRole: String,
 	// Disabled
-	disabled: { type: Boolean, default: [] },
+	disabled: { type: Array, default: [] },
 });
 
 module.exports.model = model('guilds', guildSchema);
@@ -28,9 +28,7 @@ module.exports.getGuild = async (guild) => {
 		case 'string': {
 			const guildData = await this.model
 				.findOne({ guildID: guild })
-				.catch((err) => {
-					console.error(err);
-				});
+				.catch(console.error);
 
 			return guildData;
 		}
@@ -38,9 +36,7 @@ module.exports.getGuild = async (guild) => {
 		case 'object': {
 			const guildData = await this.model
 				.findOne({ guildID: guild.id })
-				.catch((err) => {
-					console.error(err);
-				});
+				.catch(console.error);
 
 			// If there is no guild data
 			if (!guildData) {
