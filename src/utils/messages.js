@@ -1,3 +1,6 @@
+const { MessageEmbed } = require('discord.js');
+const { palette, translate } = require('../tools');
+
 // Prompt for message reactions
 module.exports.promptMessage = async (
 	message,
@@ -20,4 +23,17 @@ module.exports.promptMessage = async (
 	return message
 		.awaitReactions(filter, { max: 1, time: time })
 		.then((collected) => collected.first() && collected.first().emoji.name);
+};
+
+// Embeds
+module.exports.categoryDisabled = (category, guild) => {
+	const e = new MessageEmbed()
+		.setColor(palette.error)
+		.setTitle(
+			`${translate.categories[category]} commands are currently disabled in ${guild.guildName}`,
+		)
+		.setDescription(
+			`To enable ${translate.categories[category]} commands, do \`${guild.prefix}toggle-categories\``,
+		);
+	return e;
 };
