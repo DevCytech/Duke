@@ -1,6 +1,9 @@
 // Setup the client (bot)
 const { Client } = require('discord.js');
-const client = new Client();
+const client = new Client({
+	disableEveryone: true,
+	partials: ['GUILD_MEMBER', 'USER'],
+});
 
 const { PROD, TOKEN } = process.env;
 client.isProd = PROD;
