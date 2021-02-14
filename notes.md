@@ -25,4 +25,17 @@ There were a lot of changes, below is the list of all the changes. Have fun read
 -   Setup assets folder
 -   Created `assets/config.json` and `assets/colors.json`
 -   Database events `src/listeners/database/connect` and `src/listeners/database/error` were created
--   Remade `src/modules/guild`, `src/modules/user`, and `src/modules/member`
+-   Remade `src/modules/guild`
+
+## Day 3
+
+-   Tested the TOP.GG extension to post the bots stats
+-   Remade `src/modules/globals`, `src/modules/user`, and `src/modules/member`
+-   Added invite link tracking
+-   Added activity
+-   Remade `src/listeners/discord/guildCreate` and `src/listeners/discord/guildDelete`
+-   Message event now checks for disabled categories
+-   Message event also now does leveling
+-   Mentioning the bot now gives a response
+-   Copied over player files
+-   Now loading music events and setup clients music

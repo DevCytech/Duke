@@ -24,10 +24,11 @@ module.exports.config = {
 
 ## Command Variables
 
-| Variable  | Description                                              |
-| --------- | -------------------------------------------------------- |
-| args      | These are the arguments that went along with the command |
-| client    | The client or bot object                                 |
-| message   | This is your typical message object                      |
-| guildData | This is the data we got from the database for the guild  |
-| userData  | This is the data we got from the database for the author |
+| Variable   | Description                                                |
+| ---------- | ---------------------------------------------------------- |
+| args       | These are the arguments that went along with the command   |
+| client     | The client or bot object                                   |
+| message    | This is your typical message object                        |
+| guildData  | This is the data we got from the database for the guild    |
+| userData   | This is the data from the author, this is global user data |
+| memberData | This is the data from the member, this is per guild data   |
