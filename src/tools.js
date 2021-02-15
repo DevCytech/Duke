@@ -10,6 +10,7 @@ module.exports.fetchMember = require('./utils/members').fetchMember;
 
 // Test Management
 module.exports.toTitleCase = require('./utils/text').toTitleCase;
+module.exports.responses = require('../assets/responses.json');
 
 // Message Management
 module.exports.translate = require('../assets/translations.json');
