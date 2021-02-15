@@ -5,13 +5,14 @@
 Below lies the command template for Duke 2.0
 
 ```js
-module.exports.callback = ({ insert variables here }) => {
+module.exports.callback = async ({ insert variables here }) => {
     // insert code here
 }
 
 module.exports.config = {
     name: '',
-    aliases: [] // or ''
+    usage: '',
+    aliases: [], // or ''
     category: '',
     description: '',
     permissions: [],
