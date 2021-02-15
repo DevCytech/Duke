@@ -34,3 +34,16 @@ module.exports.getMember = async (member) => {
 
 	return memberData;
 };
+
+/* XP leader board */
+module.exports.getLeaderBoard = async (guild) => {
+	return await this.model
+		.find({ guildID: guild.id })
+		.sort({ level: -1, xp: -1 })
+		.catch(console.error);
+};
+
+module.exports.getPosition = async (user, guild) => {
+	const leaderBoard = await this.getLeaderBoard(guild);
+	return leaderBoard.findIndex((item) => item.userID == user.id);
+};
