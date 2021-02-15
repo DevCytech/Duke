@@ -4,6 +4,9 @@ const { MessageEmbed } = require('discord.js');
 const { getGuild } = require('../../models/guild');
 
 client.on('messageDelete', async (message) => {
+	// Check if bot
+	if (message.author.bot) return;
+
 	// Get guild
 	const guild = await getGuild(message.guild);
 	if (!guild || !guild.logChannel) return;
