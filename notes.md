@@ -53,3 +53,14 @@ There were a lot of changes, below is the list of all the changes. Have fun read
     -   inviteDelete
     -   messageDelete
 -   Created `toTitleCase` function
+-   Added Leader Board functions
+-   Added background image
+-   Added response images for the actions that use links
+-   Started creating action commands
+    -   Boop
+    -   Kill
+    -   Cookies
+    -   Drop Anvil
+-   Removed emojis from config
+-   Updated Command Template to include usage
+-

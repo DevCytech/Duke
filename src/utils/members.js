@@ -5,7 +5,7 @@ module.exports.fetchMember = (message, user = '') => {
 	if (!user || typeof user !== 'string') throw new Error('No user provided.');
 
 	// Simple search
-	let target = message.guild.members.get(user);
+	let target = message.guild.members.cache.get(user);
 
 	// Check if the user is a mention
 	if (!target && message.mentions.members) {
