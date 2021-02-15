@@ -139,13 +139,24 @@ client.on('message', async (message) => {
 	// Check Dev
 	if (command.config.isDev && !config.developers.includes(author.id)) return;
 
+	// Check Voice
+	if (command.config.isVoice && !member.voice.channel) {
+		return message.channel.send(
+			":warning: - You're not in a voice channel !",
+		);
+	}
+
 	// Run the command
-	command
-		.callback({ client, message, args, guildData, memberData, userData })
-		.catch((err) => {
-			console.error(err);
-			return channel.send(
-				`An error occured while trying to run ${command.config.name}. Please try again later...`,
-			);
+	try {
+		command.callback({
+			client,
+			message,
+			args,
+			guildData,
+			memberData,
+			userData,
 		});
+	} catch (err) {
+		console.error(err);
+	}
 });
