@@ -1,7 +1,7 @@
 const { client } = require('../../client');
 const { MessageEmbed } = require('discord.js');
 const { getGuild } = require('../../models/guild');
-const { palette, toTitleCase } = require('../../tools');
+const { palette } = require('../../tools');
 const ordinal = require('ordinal');
 const moment = require('moment');
 
