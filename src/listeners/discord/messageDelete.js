@@ -33,9 +33,7 @@ client.on('messageDelete', async (message) => {
 		.setTitle(`Message Deleted in #${message.channel.name}`)
 		.setDescription(
 			`"${message.content.split(250)}${
-				message.content.length > 250
-					? '... *(only the first 250 characters are being displayed)*'
-					: ''
+				message.content.length > 250 ? '...' : ''
 			}"`,
 		)
 		.setFooter(`Message ID: ${message.id}`)
