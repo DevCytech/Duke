@@ -63,4 +63,10 @@ There were a lot of changes, below is the list of all the changes. Have fun read
     -   Drop Anvil
 -   Removed emojis from config
 -   Updated Command Template to include usage
--
+
+## Day 5
+
+-   Setup guild member logs
+-   Setup guild Update logs
+-   Setup messageUpdate logs
+-   Changed Message Deleted logs
