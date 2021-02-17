@@ -70,3 +70,12 @@ There were a lot of changes, below is the list of all the changes. Have fun read
 -   Setup guild Update logs
 -   Setup messageUpdate logs
 -   Changed Message Deleted logs
+
+## Day 6
+
+-   Removed unnecessary variable in guildMemberAdd event
+-   More Action Commands
+    -   Love
+    -   Pinky Promise
+    -   Punch
+    -   Shoot
