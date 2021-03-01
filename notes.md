@@ -79,3 +79,42 @@ There were a lot of changes, below is the list of all the changes. Have fun read
     -   Pinky Promise
     -   Punch
     -   Shoot
+
+## Day 7
+
+-   Fixed "kill" message instead of the real command
+-   More More Action Commands
+    -   Feed
+    -   Hug
+    -   Kiss
+    -   Pat
+    -   Poke
+    -   Nuzzle
+    -   Slap
+    -   Tickle
+-   Added Music Commands
+    -   Play
+    -   Filters
+    -   Loop
+    -   Play
+    -   Pause
+
+## Day 8
+
+-   Updated player events (They are now setup properly the way the were written and documented to be...)
+-   Updated player messages
+
+## Day 9
+
+-   More Music Commands
+    -   Wipe Filters
+    -   Clear Queue
+    -   Lyrics
+    -   Now Playing
+    -   Queue
+    -   Resume
+    -   Search
+    -   Shuffle
+    -   Skip
+    -   Stop
+    -   Volume
