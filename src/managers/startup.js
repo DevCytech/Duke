@@ -1,5 +1,3 @@
-const { readdirSync } = require('fs');
-const { config } = require('../tools');
 const { client } = require('../client');
 const { Player } = require('discord-player');
 client.invites = {};
@@ -11,6 +9,11 @@ client.on('ready', async () => {
 	// Spin up that database
 	console.log('>> Connecting to the database...');
 	await require('./database');
+
+	// Setup player
+	console.log('>> Loading music player...');
+	client.player = new Player(client);
+	console.log('Music player is now up and running! \n');
 
 	// Load the commands
 	console.log('>> Loading all the commands...');
@@ -25,13 +28,14 @@ client.on('ready', async () => {
 		.setActivity('Chase the mailman', { type: 'PLAYING' })
 		.then((presence) =>
 			console.log(
-				`${client.user.tag} has set activity to ${presence.activities[0].name}`,
+				`${client.user.tag} has set activity to ${presence.activities[0].name} \n`,
 			),
 		)
 		.catch(console.error);
 
 	setTimeout(() => {
 		// Load invites
+		console.log('>> Loading invites...');
 		for (const guild of client.guilds.cache) {
 			try {
 				if (guild[1].me.hasPermission('VIEW_AUDIT_LOG')) {
@@ -43,26 +47,17 @@ client.on('ready', async () => {
 				console.error(err);
 			}
 		}
-
-		// Setup player
-		client.player = new Player(client);
-		client.emotes = config.emojis;
-		client.filters = config.filters;
-
-		const player = readdirSync('./src/player/').filter((file) =>
-			file.endsWith('.js'),
-		);
-		for (const file of player) {
-			const event = require(`../player/${file}`);
-			client.player.on(file.split('.')[0], event.bind(null, client));
-		}
+		console.log(`Finished loading invites in ${client.invites.size} \n`);
 	}, 5000);
 
 	// Setup any extra variables down here!!
 
 	// Alert us that the bot has finished loading
-	console.log(
-		`>> ${client.user.username} is now online and ready to be used`,
-	);
-	console.log('\n-- TERMINAL -- \n\n');
+	console.log('>> Waiting for client information...');
+	setTimeout(() => {
+		console.log(
+			`>> ${client.user.username} is now online and ready to be used`,
+		);
+		return console.log('\n-- TERMINAL -- \n\n');
+	}, 10000);
 });
