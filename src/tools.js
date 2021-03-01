@@ -18,3 +18,9 @@ module.exports.promptMessage = require('./utils/messages').promptMessage;
 
 // Date Management
 module.exports.formatDate = require('./utils/text').formatDate;
+
+// Api
+module.exports.NekoLifeAPI = new require('nekos.life')();
+module.exports.KSoftAPI = new require('@ksoft/api').KSoftClient(
+	process.env.KSOFT,
+);
