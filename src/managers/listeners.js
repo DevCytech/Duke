@@ -15,6 +15,6 @@ module.exports = async () => {
 	console.log(
 		`${eventFiles.length} listener${
 			eventFiles.length === 1 ? ' has' : 's have'
-		} been loaded!`,
+		} been loaded! \n`,
 	);
 };

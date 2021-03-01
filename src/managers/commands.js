@@ -65,11 +65,11 @@ module.exports = async (client) => {
 	console.log(
 		`${client.commands.size} command${
 			client.commands.size === 1 ? ' has' : 's have'
-		} been loaded!`,
+		} been loaded! \n`,
 	);
 	console.log(
 		`${client.aliases.size} alias${
 			client.aliases.size === 1 ? ' has' : 'es have'
-		} been loaded!`,
+		} been loaded! \n`,
 	);
 };
