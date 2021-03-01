@@ -140,9 +140,16 @@ client.on('message', async (message) => {
 	if (command.config.isDev && !config.developers.includes(author.id)) return;
 
 	// Check Voice
-	if (command.config.isVoice && !member.voice.channel) {
+	if (
+		(command.config.isVoice && !member.voice.channel) ||
+		(command.config.isVoice &&
+			message.member.voice.channel.id !==
+				message.guild.me.voice.channel.id)
+	) {
 		return message.channel.send(
-			":warning: - You're not in a voice channel !",
+			`:warning: - Please join the same voice channel as me! If I am not in one please use ${
+				guildData.prefix ? guildData.prefix : prefix
+			}`,
 		);
 	}
 
