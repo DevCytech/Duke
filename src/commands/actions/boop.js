@@ -7,7 +7,7 @@ const {
 module.exports.callback = async ({ message, args }) => {
 	// Pre command checks
 	if (!args.length) {
-		return message.reply('You need to mention someone to kill them');
+		return message.reply('You need to mention someone to boop them');
 	}
 
 	// Get the member
