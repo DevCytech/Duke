@@ -20,7 +20,7 @@ module.exports.promptMessage = require('./utils/messages').promptMessage;
 module.exports.formatDate = require('./utils/text').formatDate;
 
 // Api
-module.exports.NekoLifeAPI = new require('nekos.life')();
-module.exports.KSoftAPI = new require('@ksoft/api').KSoftClient(
-	process.env.KSOFT,
-);
+const NekoClient = require('nekos.life');
+const { KSoftClient } = require('@ksoft/api');
+module.exports.NekoLifeAPI = new NekoClient();
+module.exports.KSoftAPI = new KSoftClient(process.env.KSOFT);

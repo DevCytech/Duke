@@ -10,26 +10,33 @@ module.exports.callback = async ({ message, args }) => {
 
 	// Evaluating
 	const calculate = args.slice(0).join(' ');
-	const results = math.evaluate(calculate).catch(console.error) || null;
+	try {
+		let results = null;
+		if (calculate.includes('x')) {
+			results = math.derivative(calculate.replace(/π/g, Math.PI), 'x');
+		} else {
+			results = math.evaluate(calculate.replace(/π/g, Math.PI));
+		}
 
-	if (!results) {
+		// Send Message
+		const e = new MessageEmbed()
+			.setColor('ORANGE')
+			.setTitle('Calculating ...');
+		const msg = await message.channel.send(e);
+
+		// Edit Message
+		setTimeout(() => {
+			e.setTitle('Calculated!');
+			e.setDescription(
+				`**Equation**: \`${calculate}\` \n**Answer**: ${results}`,
+			);
+			msg.edit(e);
+		});
+	} catch (err) {
 		return message.reply(
 			"I'm sorry, that equation is either not an equation, or too complicated for my algorithm to figure out.\nFor future reference, You can use `*` `+` `/` `-` `()` and `^`",
 		);
 	}
-
-	// Send Message
-	const e = new MessageEmbed().setColor('Orange').setTitle('Calculating ...');
-	const msg = await message.channel.send(e);
-
-	// Edit Message
-	setTimeout(() => {
-		e.setTitle('Calculated!');
-		e.setDescription(
-			`**Equation**: \`${calculate}\` \n**Answer**: ${results}`,
-		);
-		msg.edit(e);
-	});
 };
 
 module.exports.config = {
