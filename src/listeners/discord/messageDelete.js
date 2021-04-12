@@ -9,10 +9,12 @@ client.on('messageDelete', async (message) => {
 
 	// Get guild
 	const guild = await getGuild(message.guild);
-	if (!guild || !guild.logChannel) return;
+	if (!guild || !guild.serverLogChannel) return;
 
 	// Get channel
-	const logChannel = await message.guild.channels.cache.get(guild.logChannel);
+	const logChannel = await message.guild.channels.cache.get(
+		guild.serverLogChannel,
+	);
 	if (
 		!logChannel ||
 		!logChannel.permissionsFor(client.user).has('SEND_MESSAGES') ||

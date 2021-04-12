@@ -16,6 +16,7 @@ const guildSchema = new Schema({
 	// Logging
 	logChannel: String,
 	reportChannel: String,
+	serverLogChannel: String,
 	// Moderation
 	mutedRole: String,
 	// Disabled

@@ -6,10 +6,12 @@ const { palette, toTitleCase } = require('../../tools');
 client.on('emojiDelete', async (emoji) => {
 	// Get guild
 	const guild = await getGuild(emoji.guild);
-	if (!guild || !guild.logChannel) return;
+	if (!guild || !guild.serverLogChannel) return;
 
 	// Get channel
-	const logChannel = await emoji.guild.channels.cache.get(guild.logChannel);
+	const logChannel = await emoji.guild.channels.cache.get(
+		guild.serverLogChannel,
+	);
 	if (
 		!logChannel ||
 		!logChannel.permissionsFor(client.user).has('SEND_MESSAGES') ||

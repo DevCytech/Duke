@@ -4,7 +4,7 @@ const { getGuild } = require('../../models/guild');
 client.on('guildMemberRemove', async (member) => {
 	// Get guild
 	const guild = await getGuild(member.guild);
-	if (!guild || !guild.logChannel) return;
+	if (!guild) return;
 
 	// Update member
 	guild.guildMembers = parseInt(guild.guildMembers) - 1;

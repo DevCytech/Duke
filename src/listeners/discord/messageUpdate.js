@@ -9,11 +9,11 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 
 	// Get guild
 	const guild = await getGuild(oldMessage.guild);
-	if (!guild || !guild.logChannel) return;
+	if (!guild || !guild.serverLogChannel) return;
 
 	// Get channel
 	const logChannel = await oldMessage.guild.channels.cache.get(
-		guild.logChannel,
+		guild.serverLogChannel,
 	);
 	if (
 		!logChannel ||

@@ -6,10 +6,12 @@ const { getGuild } = require('../../models/guild');
 client.on('inviteDelete', async (invite) => {
 	// Get guild
 	const guild = await getGuild(invite.guild);
-	if (!guild || !guild.logChannel) return;
+	if (!guild || !guild.serverLogChannel) return;
 
 	// Get channel
-	const logChannel = await invite.guild.channels.cache.get(guild.logChannel);
+	const logChannel = await invite.guild.channels.cache.get(
+		guild.serverLogChannel,
+	);
 	if (
 		!logChannel ||
 		!logChannel.permissionsFor(client.user).has('SEND_MESSAGES') ||

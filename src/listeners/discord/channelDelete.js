@@ -6,10 +6,12 @@ const { palette, toTitleCase } = require('../../tools');
 client.on('channelDelete', async (channel) => {
 	// Get guild
 	const guild = await getGuild(channel.guild);
-	if (!guild || !guild.logChannel) return;
+	if (!guild || !guild.serverLogChannel) return;
 
 	// Get channel
-	const logChannel = await channel.guild.channels.cache.get(guild.logChannel);
+	const logChannel = await channel.guild.channels.cache.get(
+		guild.serverLogChannel,
+	);
 	if (
 		!logChannel ||
 		!logChannel.permissionsFor(client.user).has('SEND_MESSAGES') ||
