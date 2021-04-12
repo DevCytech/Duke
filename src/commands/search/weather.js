@@ -11,7 +11,13 @@ module.exports.callback = async ({ message, args }) => {
 	weather.find(
 		{ search: args.join(' '), degreeType: 'C' },
 		function (err, results) {
-			console.log(results);
+			// Creepa asked for...
+			if (message.content === 'mars') {
+				return message.channel.send(
+					'Cold and Dusty, just like your heart!',
+				);
+			}
+
 			// Check for Errors
 			if (err || !results || !results.length) {
 				return message.reply(
